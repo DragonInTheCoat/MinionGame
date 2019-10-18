@@ -11,7 +11,7 @@ public class CountMinusCaller : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Spawner.CountMinus();
-            Destroy(gameObject);
+            Destroy(gameObject, 0.2f);
         }
     }
 }

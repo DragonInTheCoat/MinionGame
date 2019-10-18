@@ -535,7 +535,10 @@ MonoBehaviour:
   Max: 10
   Min: 15
   Apple: {fileID: 2158726651609684021, guid: 26bf654a389bbe04da15e2ec6effcd8a, type: 3}
+  RedApple: {fileID: 6138567457422605112, guid: 63c0151f28f9dd941990fae396401dc0,
+    type: 3}
   TextScore: {fileID: 1096508847}
+  RedCount: 3
 --- !u!4 &419299758
 Transform:
   m_ObjectHideFlags: 0
