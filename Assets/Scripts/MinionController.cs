@@ -31,6 +31,7 @@ public class MinionController : MonoBehaviour
         transform.position = startPosition;
         rigPlayer.bodyType = RigidbodyType2D.Dynamic;
         Panel.SetActive(false);
+        fl = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -58,4 +59,11 @@ public class MinionController : MonoBehaviour
         else if(collision.gameObject.tag == "Bubble")
             fl = true;
     }
+
+    /*private void Update()
+    {
+        if (rigPlayer.velocity.x > 5 || rigPlayer.velocity.y > 5)
+            rigPlayer.velocity = new Vector2(5f, 5f);
+
+    }*/
 }

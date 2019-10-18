@@ -37,7 +37,7 @@ public class Controller : MonoBehaviour
                     Train.transform.position = StartTrainPosition;
                     Times = Random.Range(1000, 5000);
                 }
-                Debug.Log(Times);
+
             }
         }
     }
