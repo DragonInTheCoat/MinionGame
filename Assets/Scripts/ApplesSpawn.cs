@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
 public class ApplesSpawn : MonoBehaviour
 {
     public int Max = 10, Min = 15;
@@ -22,12 +20,6 @@ public class ApplesSpawn : MonoBehaviour
     void Start()
     {
         q = new Quaternion();
-        /*for(int i = 0; i < RedApples.Count; ++i)
-        {
-            RedApples[i].GetComponent<RedAppleSpawn>().Spawn = this;
-        }*/
-       
-
         count = Random.Range(Min, Max);
         apples = new List<GameObject>();
         RedApples = new List<GameObject>();
@@ -68,8 +60,10 @@ public class ApplesSpawn : MonoBehaviour
         }
     }
 
+    //Список заполняется префабами яблок, расположенных в случайных местах
     void FunAppleSpawn(List<GameObject> appleList, GameObject prefab, int n)
     {
+        appleList = new List<GameObject>();
         for (int i = 0; i < n; ++i)
         {
             v = new Vector3(Random.Range(Constants.ScreenLeft, Constants.ScreenRight),
@@ -88,14 +82,13 @@ public class ApplesSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //GameObject apple;
         if(count <= 0)
         {
             count = Random.Range(Min, Max);
-            //apples = new List<GameObject>();
-
             FunAppleSpawn(apples, Apple, count);
             FunAppleSpawn(RedApples, RedApple, RedCount);
+            //добавляет количество красных яблок в общий счетчик, чтобы генерация новых яблок
+            //начиналась после исчезновения всех яблок, а не только зеленых
             count += RedCount;
         }
     }
